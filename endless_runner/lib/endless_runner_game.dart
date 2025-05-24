@@ -12,7 +12,7 @@ class EndlessRunnerGame extends FlameGame {
   int playerLane = 1;
   late PlayerComponent player;
   double _obstacleTimer = 0;
-  double _obstacleInterval = 1.2; // seconds
+  final double _obstacleInterval = 1.2; // seconds
 
   @override
   Future<void> onLoad() async {
@@ -55,7 +55,7 @@ class PlayerComponent extends SpriteComponent {
   @override
   Future<void> onLoad() async {
     super.onLoad(); // It's good practice to call super.onLoad()
-    sprite = await Flame.images.load('player.png');
+    sprite = Sprite(await Flame.images.load('player.png'));
     moveToLane(1);
     position.y = 400;
   }
