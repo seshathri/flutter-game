@@ -55,7 +55,7 @@ class PlayerComponent extends SpriteComponent {
   @override
   Future<void> onLoad() async {
     super.onLoad(); // It's good practice to call super.onLoad()
-    sprite = await Flame.images.load('player.png');
+    sprite = Sprite(await Flame.images.load('player.png'));
     moveToLane(1);
     position.y = 400;
   }
